@@ -2,24 +2,23 @@
 
 declare(strict_types=1);
 
-class EmpleadoTlf {
+class EmpleadoTlf extends Persona {
 
-    // Declaración de propiedades en el constructor
     public function __construct(
         private string $nombre,
         private string $apellidos,
         private float $sueldo,
-        private float $sueldoTope, // Sueldo tope para determinar si debe pagar impuestos
-        private array $telefonos = [] // Inicializa el array de teléfonos
+        private float $sueldoTope, 
+        private array $telefonos = [] 
     ) {}
 
-    // Métodos getter y setter
+   
     public function getsueldoTope(): float {
         return $this->sueldoTope;
     }
 
     public function setsueldoTope(float $sueldoTope): void {
-        $this->sueldoTope = $sueldoTope; // Asignación correcta a la propiedad
+        $this->sueldoTope = $sueldoTope; 
     }
     
     public function getNombre(): string {
@@ -42,27 +41,27 @@ class EmpleadoTlf {
         return $this->nombre . ' ' . $this->apellidos;
     }
 
-    // Método que determina si debe pagar impuestos
+    /
     public function debePagarImpuestos(): bool {
-        return $this->sueldo > $this->sueldoTope; // Compara sueldo con sueldoTope
+        return $this->sueldo > $this->sueldoTope; 
     }
 
-    // Añadir un teléfono
+    
     public function anyadirTelefono(string $telefono): void {
         $this->telefonos[] = $telefono;  
     }
 
-    // Listar teléfonos
+    
     public function listarTelefonos(): string {
         return implode(', ', $this->telefonos);  
     }
 
-    // Vaciar teléfonos
+    
     public function vaciarTelefonos(): void {
         $this->telefonos = [];  
     }
 
-    // Método estático para convertir a HTML
+   
     public static function toHtml(EmpleadoTlf $emp): string {
         return "
             <p>Sueldo: " . $emp->getSueldo() . " €</p> 
@@ -72,10 +71,10 @@ class EmpleadoTlf {
     }
 }
 
-// Ejemplo de uso
+
 $empleado = new EmpleadoTlf("Juan", "Pérez", 5000, 4000); // Sueldo tope 4000
 
 //echo EmpleadoTlf::toHtml($empleado);
-echo $empleado->toHtml($empleado)
+echo $empleado->toHtml($empleadop);
 
 ?>

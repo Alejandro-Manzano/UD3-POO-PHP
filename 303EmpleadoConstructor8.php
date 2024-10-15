@@ -5,7 +5,7 @@ declare(strict_types=1);
 class EmpleadoTlf {
 
 
-    //en php8 se declaran dentro dle propio constructor
+    //en php8 se declaran dentro dle propio constructor+
     public function __construct(
         private string $nombre,
         private string $apellidos,
@@ -54,7 +54,7 @@ class EmpleadoTlf {
 }
 
 // Ejemplo de uso
-$empleado = new EmpleadoTlf("Juan", "Pérez", 4000);
+$empleado = new EmpleadoTlf("Juan", "Pérez");
 
 // Mostrar información
 echo "Sueldo: ". $empleado->getSueldo(). "<br>";
