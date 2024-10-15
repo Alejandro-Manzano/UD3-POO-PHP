@@ -3,16 +3,15 @@
 declare(strict_types=1);
 
 class EmpleadoTlf {
-    private string $nombre;
-    private string $apellidos;
-    private float $sueldo;
-    private array $telefonos = []; 
-    
-    public function __construct(string $nombre, string $apellidos, float $sueldo = 1000) {
-        $this->nombre = $nombre;
-        $this->apellidos = $apellidos;
-        $this->sueldo = $sueldo;
-    }
+
+
+    //en php8 se declaran dentro dle propio constructor
+    public function __construct(
+        private string $nombre,
+        private string $apellidos,
+        private float $sueldo,
+        private array $telefonos = []
+    ) {}
 
     // Métodos getter y setter
     public function getNombre(): string {
@@ -55,7 +54,7 @@ class EmpleadoTlf {
 }
 
 // Ejemplo de uso
-$empleado = new EmpleadoTlf("Juan", "Pérez");
+$empleado = new EmpleadoTlf("Juan", "Pérez", 4000);
 
 // Mostrar información
 echo "Sueldo: ". $empleado->getSueldo(). "<br>";
