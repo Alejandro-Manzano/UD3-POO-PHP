@@ -6,7 +6,8 @@ class EmpleadoTlf {
     private string $nombre;
     private string $apellidos;
     private float $sueldo;
-    private array $telefonos = []; 
+    private array $telefonos = [];
+    
     public function __construct(string $nombre, string $apellidos, float $sueldo) {
         $this->nombre = $nombre;
         $this->apellidos = $apellidos;
