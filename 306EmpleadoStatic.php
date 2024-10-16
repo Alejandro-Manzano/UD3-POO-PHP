@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-class EmpleadoTlf extends Persona {
+class EmpleadoTlf {
 
     public function __construct(
         private string $nombre,
@@ -41,7 +41,7 @@ class EmpleadoTlf extends Persona {
         return $this->nombre . ' ' . $this->apellidos;
     }
 
-    /
+    
     public function debePagarImpuestos(): bool {
         return $this->sueldo > $this->sueldoTope; 
     }
@@ -74,7 +74,7 @@ class EmpleadoTlf extends Persona {
 
 $empleado = new EmpleadoTlf("Juan", "Pérez", 5000, 4000); // Sueldo tope 4000
 
-//echo EmpleadoTlf::toHtml($empleado);
-echo $empleado->toHtml($empleadop);
+echo EmpleadoTlf::toHtml($empleado);
+
 
 ?>
